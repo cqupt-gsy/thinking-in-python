@@ -1,0 +1,35 @@
+{% extends "base_results.html" %}
+{% block title %}
+{{ type }}
+{% endblock %}
+{% block content %}
+{% if results %}
+    <h3 align="center"> There are total {{ length }} results in database! </h3>
+    {% for item in results %}
+        <hr color="grey">
+        <table align="center" width="100%">
+        <tr align="center">
+            <td width="5%">编号</td>
+            <td width="25%">物资资产编号</td>
+            <td width="15%">物资资产名称</td>
+            <td width="15%">物资资产型号</td>
+            <td width="20%">存放位置</td>
+            <td width="10%">保管人</td>
+            <td width="10%">单价/元</td>
+        </tr>
+        <tr align="center">
+            <td width="5%">{{ item.tid }}</td>
+            <td width="25%">{{ item.tnum }}</td>
+            <td width="15%">{{ item.tname }}</td>
+            <td width="15%">{{ item.ttype }}</td>
+            <td width="20%">{{ item.tposition }}</td>
+            <td width="10%">{{ item.tkeeper }}</td>
+            <td width="10%">{{ item.tprice }}</td>
+        </tr>
+        </table>
+        <hr color="grey">
+    {% endfor %}
+{% else %}
+    <p> No Things are Found</p>
+{% endif %}
+{% endblock %}

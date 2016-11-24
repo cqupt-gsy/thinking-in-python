@@ -1,24 +1,32 @@
 class Operator:
-    def getResult(self, firstNumber, secondNumber, operatorSimble):
+    @staticmethod
+    def getResult(firstNumber, secondNumber, operatorSample):
         operators = {'+': PlusOperator, '-': MinusOperator,
-                '*': MultiOperator, '/': DivOperator}
-        return operators.get(operatorSimble).getResult(self, firstNumber, secondNumber)
+                     '*': MultiOperator, '/': DivOperator}
+        return operators.get(operatorSample).getResult(firstNumber, secondNumber)
+
 
 class PlusOperator:
-    def getResult(self, firstNumber, secondNumber):
+    @staticmethod
+    def getResult(firstNumber, secondNumber):
         return firstNumber + secondNumber
 
+
 class MinusOperator:
-    def getResult(self, firstNumber, secondNumber):
+    @staticmethod
+    def getResult(firstNumber, secondNumber):
         return firstNumber - secondNumber
 
+
 class MultiOperator:
-    def getResult(self, firstNumber, secondNumber):
+    @staticmethod
+    def getResult(firstNumber, secondNumber):
         return firstNumber * secondNumber
 
+
 class DivOperator:
-    def getResult(self, firstNumber, secondNumber):
-        if ( 0 == secondNumber):
+    @staticmethod
+    def getResult(firstNumber, secondNumber):
+        if 0 == secondNumber:
             raise ValueError('Second number can not be zero')
         return firstNumber / secondNumber
-

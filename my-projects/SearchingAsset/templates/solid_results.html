@@ -1,0 +1,35 @@
+{% extends "base_results.html" %}
+{% block title %}
+{{ type }}
+{% endblock %}
+{% block content %}
+{% if results %}
+    <h3 align="center"> There are total {{ length }} results in database! </h3>
+    {% for item in results %}
+        <table align="center" width="100%">
+        <tr align="center">
+            <td width="5%">编号</td>
+            <td width="25%">固定资产编号</td>
+            <td width="15%">固定资产名称</td>
+            <td width="15%">固定资产型号</td>
+            <td width="20%">存放位置</td>
+            <td width="10%">保管人</td>
+            <td width="10%">单价/元</td>
+        </tr>
+        <hr color="grey">
+        <tr align="center">
+            <td width="5%">{{ item.sid }}</td>
+            <td width="25%">{{ item.snum }}</td>
+            <td width="15%">{{ item.sname }}</td>
+            <td width="15%">{{ item.stype }}</td>
+            <td width="20%">{{ item.sposition }}</td>
+            <td width="10%">{{ item.skeeper }}</td>
+            <td width="10%">{{ item.sprice }}</td>
+        </tr>
+        </table>
+        <hr color="grey">
+    {% endfor %}
+{% else %}
+    <p> No Solids are Found</p>
+{% endif %}
+{% endblock %}

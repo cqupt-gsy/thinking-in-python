@@ -1,13 +1,14 @@
 import unittest
-from calculator import Calcultor
-from simple_factory import Operator 
+
+from calculator import Calculator
+
 
 class CalculatorTestCase(unittest.TestCase):
     def setUp(self):
-        self.calculator = Calcultor
+        self.calculator = Calculator
 
     def test_one_plus_one_return_two(self):
-        self.assertEqual(self.calculator.getResult(self, 1, 1, '+'), 2, 'Plus methond wrong!')
+        self.assertEqual(self.calculator.getResult(self, 1, 1, '+'), 2, 'Plus method wrong!')
 
     def test_two_minus_one_return_one(self):
         self.assertEqual(self.calculator.getResult(self, 2, 1, '-'), 1, 'Minus method wrong!')

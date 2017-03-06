@@ -3,17 +3,17 @@ import scrapy
 
 from scrapy_splash import SplashRequest
 from missing_child.items import ItemLink
-from missing_child.spiders.spike import loadJsonDataForKey
+from missing_child.spiders.json_helper import loadJsonDataForKey
 
 
-class TableLinkSpiderBackup(scrapy.Spider):
-    name = 'item_link_spider_backup'
+class MissingPageItemLinkSpider(scrapy.Spider):
+    name = 'missing_page_item_link_spider'
     allowed_domains = ['bbs.baobeihuijia.com']
     base_url = 'http://bbs.baobeihuijia.com/'
     table_xpath = '//tbody[contains(@id, "normalthread")]/tr/th/a[3]/@href'
 
     def start_requests(self):
-        for missing_page in loadJsonDataForKey(backup='item_link_backup.json'):
+        for missing_page in loadJsonDataForKey():
             self.logger.info('***Start missing page %s.', missing_page)
             yield SplashRequest(missing_page,
                                 self.parse_urls_in_table,

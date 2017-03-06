@@ -2,7 +2,7 @@ import scrapy
 
 from scrapy_splash import SplashRequest
 from missing_child.items import MissingChildItem
-from missing_child.spiders.spike import loadJsonDataForKey
+from missing_child.spiders.json_helper import loadJsonDataForKey
 
 
 class ItemSpider(scrapy.Spider):

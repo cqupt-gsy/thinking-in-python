@@ -4,7 +4,7 @@ from scrapy_splash import SplashRequest
 from missing_child.items import ItemLink
 
 
-class TableLinkSpider(scrapy.Spider):
+class ItemLinkSpider(scrapy.Spider):
     name = 'item_link_spider'
     allowed_domains = ['bbs.baobeihuijia.com']
     base_url = 'http://bbs.baobeihuijia.com/'

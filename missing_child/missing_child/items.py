@@ -19,5 +19,9 @@ class MissingChildItem(scrapy.Item):
     missing_place = scrapy.Field()
     police_call = scrapy.Field()
     dna = scrapy.Field()
-    url = scrapy.Field()
-    pass
+    missingPage = scrapy.Field()
+
+
+class ItemLink(scrapy.Item):
+    itemLink = scrapy.Field()
+    missingPage = scrapy.Field()

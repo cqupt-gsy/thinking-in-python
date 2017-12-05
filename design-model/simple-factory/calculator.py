@@ -1,5 +1,6 @@
 from simple_factory import Operator
 
+
 class Calculator:
     def __init__(self):
         self.operator = Operator

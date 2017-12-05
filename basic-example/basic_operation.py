@@ -1,0 +1,3 @@
+
+class BasicOperation:
+    pass

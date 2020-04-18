@@ -174,3 +174,5 @@ flask
 scikit-learn
 scrapy
 tornado
+
+**/.DS_Store
